@@ -1,0 +1,25 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "el mejor curso por 0$",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "curso",
+    "node",
+    "js"
+  ],
+  "author": "sebastian",
+  "license": "ISC",
+  "dependencies": {
+    "picocolors": "1.0.1"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}

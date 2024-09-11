@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probar API Rest</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #main {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            place-items: center;
+            gap: 21px;
+        }
+
+        article {
+            width: 280px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <script type="module">
+        fetch('http://localhost:1234/movies')
+            .then(res => res.json())
+            .then(movies => {
+                const main = document.getElementById('main')
+                const html = movies.map(movie => {
+                    return `
+                <article id="${movie.id}">
+                    <h2>${movie.title}</h2>
+                    <img src="${movie.poster}" alt="${movie.title}">
+                    <p>${movie.rate}</p>
+
+                    <button>Eliminar</button>
+
+                    </article>
+                `
+                }).join('')
+                main.innerHTML += html
+
+                document.addEventListener('click', e => {
+                    if(e.target.matches('button')) {
+                      const article = e.target.closest('article')
+                      const id = article.id
+
+                      fetch(`http://localhost:1234/movies/${id}`, {
+                          method: 'DELETE'
+                      })
+                      .then(res => res.json())
+                      .then(res => {
+                          article.remove()
+                      })
+                    }
+                })
+
+
+            })
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Probar API Rest</h1>
+    </header>
+    <main id="main">
+
+    </main>
+</body>
+
+</html> 
