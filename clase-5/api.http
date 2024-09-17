@@ -2,7 +2,7 @@
 GET http://localhost:1234/movies
 
 ### recuperar una pelicula por id
-GET http://localhost:1234/movies/c0c86b64-7224-11ef-9d23-047c16877420
+GET http://localhost:1234/movies/6d3b3f7c-74bd-11ef-a170-047c16877420
 
 ### recuperar todas las peliculas por un genero
 GET http://localhost:1234/movies?genre=action
@@ -14,27 +14,26 @@ Content-Type: application/json
 
 {
   "sql": "SELECT * FROM users",
-  "title": "Predestination",
+  "title": "Who Am I: Kein System ist sicher",
   "year": 2014,
-  "director": "Michael Spierig, Peter Spierig",
-  "duration": 97,
-  "poster": "https://m.media-amazon.com/images/I/71lM-5XqB7L._AC_SY679_.jpg",
-  "rate": 9.0,
+  "director": "Baran bo Odar",
+  "duration": 102,
+  "poster": "https://m.media-amazon.com/images/I/71kEzbj7nIL._AC_SY679_.jpg",
+  "rate": 7.6,
   "genre": [
-    "Sci-Fi",
-    "Thriller"
+    "Crime"
   ]
 }
 
 ### Actualizar una pelicula
 
-PATCH http://localhost:1234/movies/021e7ccd-d0f8-466c-96c8-c467acdd7310
+PATCH http://localhost:1234/movies/6d3b3f7c-74bd-11ef-a170-047c16877420
 Content-Type: application/json
 
 {
-  "title": "the end"
+  "title": "Who Am I, and why"
 }
 
 ### Borrar una pelicula 
 
-DELETE http://localhost:1234/movies/021e7ccd-d0f8-466c-96c8-c467acdd7310
+DELETE http://localhost:1234/movies/cdc28e6f-74bc-11ef-a170-047c16877420
