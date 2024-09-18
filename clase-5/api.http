@@ -5,7 +5,7 @@ GET http://localhost:1234/movies
 GET http://localhost:1234/movies/6d3b3f7c-74bd-11ef-a170-047c16877420
 
 ### recuperar todas las peliculas por un genero
-GET http://localhost:1234/movies?genre=action
+GET http://localhost:1234/movies?genre=crime
 
 
 ### crear una pelicula
@@ -31,7 +31,7 @@ PATCH http://localhost:1234/movies/6d3b3f7c-74bd-11ef-a170-047c16877420
 Content-Type: application/json
 
 {
-  "title": "Who Am I, and why"
+  "title": "Who Am I"
 }
 
 ### Borrar una pelicula 
